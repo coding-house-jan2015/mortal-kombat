@@ -10,7 +10,7 @@ var paths = {
   lesssrc: ['./client/**/*.less'],
   codesrc: ['./client/**/*.js', './server/**/*.js'],
   clntsrc: ['./client/**/*.js'],
-  mediasrc: ['./client/**/*.mp3', './client/**/*.jpg'],
+  mediasrc: ['./client/**/*.mp3', './client/**/*.jpg', './client/**/*.wav'],
   jadedst: './public',
   lessdst: './public',
   codedst: './public',

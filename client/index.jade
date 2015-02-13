@@ -5,9 +5,13 @@ html(lang='en')
     title Mortal Kombat
     link(rel='stylesheet', href='/style.css')
   body
-    h1 Mortal Kombat
-
-    audio
+    button#fight Fight!
+    #fighters
+    #weapons
+    audio#music
+    audio#effects
     script(src='/vendor/jquery/dist/jquery.js')
     script(src='/vendor/lodash/lodash.js')
     script(src='/main.js')
+    script(src='/models/weapon.js')
+    script(src='/models/fighter.js')
