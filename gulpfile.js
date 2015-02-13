@@ -10,14 +10,14 @@ var paths = {
   lesssrc: ['./client/**/*.less'],
   codesrc: ['./client/**/*.js', './server/**/*.js'],
   clntsrc: ['./client/**/*.js'],
-  audiosrc: ['./client/**/*.mp3'],
+  mediasrc: ['./client/**/*.mp3', './client/**/*.jpg'],
   jadedst: './public',
   lessdst: './public',
   codedst: './public',
-  audiodst: './public'
+  mediadst: './public'
 };
 
-gulp.task('build', ['jade', 'less', 'lint', 'jscs', 'copy', 'audio']);
+gulp.task('build', ['jade', 'less', 'lint', 'jscs', 'copy', 'media']);
 gulp.task('default', ['build', 'watch']);
 
 gulp.task('jade', function() {
@@ -54,14 +54,14 @@ gulp.task('copy', function() {
     .pipe(copy(paths.codedst, {prefix:1}));
 });
 
-gulp.task('audio', function() {
-  gulp.src(paths.audiosrc)
-    .pipe(copy(paths.audiodst, {prefix:1}));
+gulp.task('media', function() {
+  gulp.src(paths.mediasrc)
+    .pipe(copy(paths.mediadst, {prefix:1}));
 });
 
 gulp.task('watch', function() {
   gulp.watch(paths.jadesrc, ['jade']);
   gulp.watch(paths.lesssrc, ['less']);
-  gulp.watch(paths.audiosrc, ['audio']);
+  gulp.watch(paths.mediasrc, ['media']);
   gulp.watch(paths.codesrc, ['lint', 'jscs', 'copy']);
 });
